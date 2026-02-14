@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>💕 Valentine's Message 💕</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Column 1 -->
+      <div class="column1">
+        <div class="container">
+          <div class="envelope-wrapper">
+            <div class="envelope">
+              <div class="letter">
+                
+                <div class="text">
+                  <strong>HELLO</strong>
+                  <strong>FROM YOUR SECRET ADMIRER? HAHAHAHA</strong>
+                  <p>
+                   scroll down hehe
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="heart"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="column2">
+        <div class="separator-box">
+          <div class="audio-container" id="yt-container">
+            <iframe
+              id="yt-player"
+              width="0"
+              height="0"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <h2>✨ Would you accept my gift? ✨</h2>
+         <img
+            src="https://media.tenor.com/9A9NQV3RzSQAAAAm/meow-hs-meow-flowers.webp"
+            alt="GIF"
+          />
+          <button class="playAudio" id="playAudio" onclick="window.open('https://www.youtube.com/watch?v=e1mOmdykmwI', '_blank')">
+            💕 Play Music 💕
+          </button>
+          <button class="yesBTN" id="yesBTN" onclick="yesButton()">💕 Yes 💕</button>
+          <button class="noBTN" id="noBTN">No</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      // Envelope opening animation
+      const envelope = document.querySelector(".envelope-wrapper");
+      envelope.addEventListener("click", () => {
+        envelope.classList.toggle("flap");
+      });
+      // YouTube Audio Control
+      let player = document.getElementById("yt-player");
+      // Music button opens YouTube in new tab
+      yesButton = () => {
+        window.location.href = "letter.html";
+      };
+      const moveRandomEl = (e) => {
+        e.style.position = "absolute";
+        e.style.top = Math.floor(Math.random() * 90 + 5) + "%";
+        e.style.left = Math.floor(Math.random() * 90 + 5) + "%";
+      };
+      const moveRandomBTN = document
+        .getElementById("noBTN")
+        .addEventListener("mouseenter", (e) => {
+          moveRandomEl(e.target);
+        });
+    </script>
+  </body>
+</html>
